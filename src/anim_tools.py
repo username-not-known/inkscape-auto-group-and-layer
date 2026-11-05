@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-MIT license
+BSD-3
 
 Originally by suv-sf@users.sf.net
 
