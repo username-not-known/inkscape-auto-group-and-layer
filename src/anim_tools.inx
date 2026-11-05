@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<inkscape-extension xmlns="http://www.inkscape.org/namespace/inkscape/extension">
+  <name>AnimTools</name>
+  <id>su-v.org.inkscape.effect.anim.tools</id>
+
+  <param name="nb_main" type="notebook">
+    <page name="page_groups" gui-text="Groups">
+      <param name="action_groups" type="optiongroup" appearance="full" gui-text="Action:">
+        <option value="object_to_group">Wrap each selected object in group</option>
+        <option value="zip_groups">Zip two selected groups</option>
+        <option value="zip_into_subgroups">Zip objects of selected groups</option>
+        <option value="merge_into_subgroups">Merge objects of selected groups</option>
+      </param>
+      <param name="use_offset" type="bool" gui-text="Apply offset when zipping or merging groups">false</param>
+      <param name="offset_groups" type="int" min="-999999" max="999999" gui-text="Offset for subgroup zip/merge:">0</param>
+    </page>
+    <page name="page_layers" gui-text="Layers">
+      <param name="action_layers" type="optiongroup" appearance="full" gui-text="Action:">
+        <option value="group_to_layer">Convert each selected group to layer</option>
+        <option value="group_to_sublayer">Convert each selected group to sublayer</option>
+        <option value="object_to_layer">Wrap each selected object in sublayer</option>
+        <option value="groupcontent_to_layer">Wrap each object in selected groups in a sublayer</option>
+        <option value="layers_to_group">Convert top-level layers to groups</option>
+        <option value="layer_to_group">Convert current layer to group</option>
+        <option value="sublayer_to_group">Convert sublayers to groups</option>
+        <option value="unwrap_sublayer">Unwrap objects in sublayers</option>
+      </param>
+    </page>
+    <page name="page_misc" gui-text="Misc">
+      <param name="action_misc" type="optiongroup" appearance="full" gui-text="Action:">
+        <option value="ungroup_keep_id">Ungroup selected groups, keep id</option>
+        <option value="ungroup_combine">Ungroup selected groups and combine paths</option>
+        <option value="unlink_recursively">Unlink clones within selected groups</option>
+      </param>
+    </page>
+    <page name="page_help" gui-text="Help">
+      <label>Tools to prepare drawings for animations.</label>
+    </page>
+  </param>
+
+  <effect needs-live-preview="true">
+    <object-type>all</object-type>
+    <effects-menu>
+      <submenu name="Animation"/>
+    </effects-menu>
+  </effect>
+
+  <script>
+    <command location="inx" interpreter="python">anim_tools.py</command>
+  </script>
+</inkscape-extension>
